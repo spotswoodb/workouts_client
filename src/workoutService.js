@@ -6,5 +6,15 @@ class WorkoutService {
         this.endpoint = endpoint
     }
 
-    
+    // 1. Read/Index action
+    getWorkouts(){
+        fetch(`${this.endpoint}/workouts`)
+        .then(resp => resp.json())
+        .then(workouts => {
+            for (const workout of workouts){
+                const c = new Workout(workout)
+                c.slapOnDom()
+            }
+        })
+    }
 }
