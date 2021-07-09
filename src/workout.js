@@ -26,6 +26,23 @@ class Workout {
     }
 
     slapOnDom(){
-        Workout.workoutsContainer.append(this.workoutHTML())
+        const workoutsContainer = document.querySelector(`#journal-${this.journal_id}-workouts-container`)
+        const workoutContainer = document.createElement('div')
+        workoutContainer.id = `workout-${this.id}`
+        workoutContainer.innerHTML = `
+            <p>${this.name}</p>
+            <button class='delete-workout-button' data-workout-id='${this.id}'>Delete</button>
+        `
+        workoutsContainer.appendChild(workoutContainer)
+        workoutsContainer.querySelector('.delete-workout-button').addEventListener('click', WorkoutService.deleteWorkout)
+    }
+
+    toggleDiv(){
+        
     }
 }
+
+// i need to toggle between div onclicks - show the div then not show the div
+// what does it take to do that?
+// something with the event listener
+// 
