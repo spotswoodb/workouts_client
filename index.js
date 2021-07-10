@@ -7,6 +7,8 @@ journalService.getJournals()
 Workout.workoutForm.addEventListener('submit', handleSubmit)
 Workout.renderForm()
 
+// this below needs to be fixed
+
 function handleSubmit(){
     event.preventDefault()
     WorkoutService.createWorkout()

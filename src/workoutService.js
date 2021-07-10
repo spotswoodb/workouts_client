@@ -43,7 +43,7 @@ class WorkoutService {
             body: JSON.stringify(workout)
         }
 
-        // this needs to be fixed
+        // this below needs to be fixed
 
         fetch(`${base_url}/journals/${journalId}/workouts`, configObj)
         .then(workout => {

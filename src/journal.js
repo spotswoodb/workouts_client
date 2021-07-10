@@ -32,6 +32,7 @@ class Journal {
         Journal.journalsContainer.append(this.journalHTML())
         const journalSpan = document.querySelector(`#journal-${this.id} span`)
         journalSpan.addEventListener('click', WorkoutService.getWorkouts)
+        // this below needs to be fixed
         journalSpan.addEventListener('onclick', WorkoutService.toggleDiv)
     }
 }
