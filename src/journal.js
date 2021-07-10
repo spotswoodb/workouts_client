@@ -32,5 +32,6 @@ class Journal {
         Journal.journalsContainer.append(this.journalHTML())
         const journalSpan = document.querySelector(`#journal-${this.id} span`)
         journalSpan.addEventListener('click', WorkoutService.getWorkouts)
+        journalSpan.addEventListener('onclick', WorkoutService.toggleDiv)
     }
 }

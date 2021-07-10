@@ -15,6 +15,11 @@ class WorkoutService {
         })
     }
 
+    static toggleDiv(e) {
+        const workoutId = e.target.dataset.workoutId
+        workoutId.classList.toggle("divstyle")
+    }
+
     static deleteWorkout(e){
         const workoutId = e.target.dataset.workoutId
         document.querySelector(`#workout-${workoutId}`).remove()

@@ -37,12 +37,13 @@ class Workout {
         workoutsContainer.querySelector('.delete-workout-button').addEventListener('click', WorkoutService.deleteWorkout)
     }
 
-    toggleDiv(){
-        
-    }
+    // toggleDiv(){
+    //     const workoutsContainer = document.querySelector(`#journal-${this.journal_id}-workouts-container`)
+    //     workoutsContainer.classList.toggle('divstyle')
+    // }
 }
 
-// i need to toggle between div onclicks - show the div then not show the div
+// i need to toggle between div clicks - show the div then not show the div
 // what does it take to do that?
 // something with the event listener
 // 
