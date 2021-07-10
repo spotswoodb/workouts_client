@@ -2,7 +2,7 @@ class Workout {
     // remember objects
     static all = []
     static workoutsContainer = document.getElementById("workouts-container")
-    static workoutForm = document.getElementById("workouts-container")
+    static workoutForm = document.getElementById("form-container")
     constructor({id, name, journal_id}){
         this.id = id
         this.name = name
@@ -35,6 +35,15 @@ class Workout {
         `
         workoutsContainer.appendChild(workoutContainer)
         workoutsContainer.querySelector('.delete-workout-button').addEventListener('click', WorkoutService.deleteWorkout)
+    }
+
+    static renderForm(){
+        Workout.workoutForm.innerHTML += `
+            <form id="new-workout-form">
+                Workout Name: <input type="text" id="name">
+                <input type="submit" id="create">
+            </form>
+        `
     }
 
     // toggleDiv(){

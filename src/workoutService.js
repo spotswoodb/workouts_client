@@ -27,4 +27,28 @@ class WorkoutService {
             method: "DELETE"
         })
     }
+
+    static createWorkout(){
+        const journalId = document.getElementById(`${journal_id}`)
+        const workout = {
+            name: document.getElementById('name').value,
+            journal_id: 1
+        }
+        
+        const configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(workout)
+        }
+
+        // this needs to be fixed
+
+        fetch(`${base_url}/journals/${journalId}/workouts`, configObj)
+        .then(workout => {
+            console.log(workout)
+        })
+
+    }
 }
