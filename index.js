@@ -4,8 +4,8 @@ const journalService = new JournalService(base_url)
 // workoutService.getWorkouts()
 journalService.getJournals()
 // any initializations of the application
-Workout.workoutForm.addEventListener('submit', handleSubmit)
-Workout.renderForm()
+// Workout.workoutForm.addEventListener('submit', handleSubmit)
+Journal.renderForm()
 
 // this below needs to be fixed
 

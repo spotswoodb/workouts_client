@@ -1,6 +1,7 @@
 class Journal {
     static all = []
     static journalsContainer = document.getElementById("journals-container")
+    static journalForm = document.getElementById("form-container")
     constructor({name, id}) {
         this.id = id
         this.name = name
@@ -13,7 +14,8 @@ class Journal {
 
         Journal.all.push(this)
     }
-
+   
+    
     journalHTML(){
         this.element.innerHTML += `
             <div>
@@ -30,9 +32,21 @@ class Journal {
 
     slapOnDom(){
         Journal.journalsContainer.append(this.journalHTML())
-        const journalSpan = document.querySelector(`#journal-${this.id} span`)
-        journalSpan.addEventListener('click', WorkoutService.getWorkouts)
-        // this below needs to be fixed
-        journalSpan.addEventListener('onclick', WorkoutService.toggleDiv)
+        const journalSpan = document.querySelector(`#journal-${this.id} span`)        
+        journalSpan.addEventListener('click', WorkoutService.toggleDiv)
+
     }
+
+    
+
+    static renderForm(){
+        Journal.journalForm.innerHTML += `
+            <form id="new-journal-form">
+                Workout Name: <input type="text" id="name">
+                <input type="submit" id="create">
+            </form>
+        `
+        document.querySelector(`#new-journal-form`).addEventListener('submit', JournalService.createJournal)
+    }
+
 }

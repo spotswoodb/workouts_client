@@ -26,6 +26,9 @@ class Workout {
     }
 
     slapOnDom(){
+        if (document.querySelector(`#workout-${this.id}`)){
+            return 
+        }
         const workoutsContainer = document.querySelector(`#journal-${this.journal_id}-workouts-container`)
         const workoutContainer = document.createElement('div')
         workoutContainer.id = `workout-${this.id}`
@@ -37,15 +40,7 @@ class Workout {
         workoutsContainer.querySelector('.delete-workout-button').addEventListener('click', WorkoutService.deleteWorkout)
     }
 
-    static renderForm(){
-        Workout.workoutForm.innerHTML += `
-            <form id="new-workout-form">
-                Workout Name: <input type="text" id="name">
-                <input type="submit" id="create">
-            </form>
-        `
-    }
-
+  
     // toggleDiv(){
     //     const workoutsContainer = document.querySelector(`#journal-${this.journal_id}-workouts-container`)
     //     workoutsContainer.classList.toggle('divstyle')

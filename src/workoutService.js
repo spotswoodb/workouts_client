@@ -3,8 +3,7 @@
 class WorkoutService {
 
     // 1. Read/Index action
-    static getWorkouts(e){
-        const journalId = e.target.dataset.journalId
+    static getWorkouts(journalId){
         fetch(`${base_url}/journals/${journalId}/workouts`)
         .then(resp => resp.json())
         .then(workouts => {
@@ -16,8 +15,15 @@ class WorkoutService {
     }
 
     static toggleDiv(e) {
-        const workoutId = e.target.dataset.workoutId
-        workoutId.classList.toggle("divstyle")
+        const journalId = e.target.dataset.journalId
+        const workoutContainer = document.querySelector(`#journal-${journalId}-workouts-container`)
+        if (workoutContainer.classList.contains("open")){
+            workoutContainer.innerHTML = ''
+            workoutContainer.classList.remove('open')
+        } else {
+            WorkoutService.getWorkouts(journalId)
+            workoutContainer.classList.add('open')
+        }
     }
 
     static deleteWorkout(e){
