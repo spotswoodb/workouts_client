@@ -3,6 +3,7 @@ class Workout {
     static all = []
     static workoutsContainer = document.getElementById("workouts-container")
     static workoutForm = document.getElementById("form-container")
+    
     constructor({id, name, journal_id}){
         this.id = id
         this.name = name
