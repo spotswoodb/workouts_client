@@ -42,7 +42,7 @@ class Journal {
     static renderForm(){
         Journal.journalForm.innerHTML += `
             <form id="new-journal-form">
-                Workout Name: <input type="text" id="name">
+                Journal Name: <input type="text" id="name">
                 <input type="submit" id="create">
             </form>
         `
