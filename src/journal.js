@@ -1,7 +1,9 @@
+
 class Journal {
     static all = []
     static journalsContainer = document.getElementById("journals-container")
     static journalForm = document.getElementById("form-container")
+
     constructor({name, id}) {
         this.id = id
         this.name = name
@@ -19,7 +21,7 @@ class Journal {
     journalHTML(){
         this.element.innerHTML += `
             <div>
-                <h3>
+                <h3 class='p-4'>
                     <span data-journal-id="${this.id}">${this.name}</span>
                 </h3>
                 <div id="journal-${this.id}-workouts-container">
@@ -41,8 +43,8 @@ class Journal {
 
     static renderForm(){
         Journal.journalForm.innerHTML += `
-            <form id="new-journal-form">
-                Journal Name: <input type="text" id="name">
+            <form id="new-journal-form" class="font-serif p-4">
+                Journal Name: <input type="text" id="name" class="border font-serif">
                 <input type="submit" id="create">
             </form>
         `

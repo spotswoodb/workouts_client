@@ -34,21 +34,12 @@ class Workout {
         const workoutContainer = document.createElement('div')
         workoutContainer.id = `workout-${this.id}`
         workoutContainer.innerHTML = `
-            <p>${this.name}</p>
-            <button class='delete-workout-button' data-workout-id='${this.id}'>Delete</button>
+            <p class='p-4'>${this.name}</p>
+            <button class='delete-workout-button border p-4' data-workout-id='${this.id}'>Delete</button>
         `
         workoutsContainer.appendChild(workoutContainer)
-        workoutsContainer.querySelector('.delete-workout-button').addEventListener('click', WorkoutService.deleteWorkout)
+        const deleteButton = workoutContainer.querySelector('.delete-workout-button')
+        deleteButton.addEventListener('click', WorkoutService.deleteWorkout)
     }
-
-  
-    // toggleDiv(){
-    //     const workoutsContainer = document.querySelector(`#journal-${this.journal_id}-workouts-container`)
-    //     workoutsContainer.classList.toggle('divstyle')
-    // }
+    
 }
-
-// i need to toggle between div clicks - show the div then not show the div
-// what does it take to do that?
-// something with the event listener
-// 

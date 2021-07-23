@@ -30,31 +30,12 @@ class WorkoutService {
         const workoutId = e.target.dataset.workoutId
         document.querySelector(`#workout-${workoutId}`).remove()
         fetch(`${base_url}/workouts/${workoutId}`, {
-            method: "DELETE"
-        })
-    }
-
-    static createWorkout(){
-        const journalId = document.getElementById(`${journal_id}`)
-        const workout = {
-            name: document.getElementById('name').value,
-            journal_id: 1
-        }
-        
-        const configObj = {
-            method: 'POST',
+            method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(workout)
-        }
-
-        // this below needs to be fixed
-
-        fetch(`${base_url}/journals/${journalId}/workouts`, configObj)
-        .then(workout => {
-            console.log(workout)
+            }
         })
-
+        .then(resp => resp.json())
+        .then(json => alert(json.message))
     }
 }

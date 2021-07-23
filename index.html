@@ -4,19 +4,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Log</title>
-    <link href="StyleSheet.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./stylesheet/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Pick A Journal or Add a New One!</h1>
+    <h1 class="font-serif">Pick A Journal or Add a New One!</h1>
     
-    <div id="journals-container">
+    <div id="journals-container" class="font-serif grid grid-cols-3 height: ['hover', 'focus']">
         
     </div>
 
     <div id="form-container">
 
     </div>
-
 
     <script src="src/journal.js"></script>
     <script src="src/workout.js"></script>
