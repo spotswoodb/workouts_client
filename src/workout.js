@@ -36,9 +36,15 @@ class Workout {
         workoutContainer.innerHTML = `
             <p class='p-4'>${this.name}</p>
             <button class='delete-workout-button border p-4' data-workout-id='${this.id}'>Delete</button>
+            <button class='leg-day-btn'>Leg Day!</button>
         `
         workoutsContainer.appendChild(workoutContainer)
         const deleteButton = workoutContainer.querySelector('.delete-workout-button')
+        // const legDayButton = workoutContainer.querySelector('.leg-day-btn')
+        // const legJournalId = workoutsContainer.
+        // .addEventListener('click', () => {
+        //     WorkoutService.addLegWorkout
+        // } 
         deleteButton.addEventListener('click', WorkoutService.deleteWorkout)
     }
     

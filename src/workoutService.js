@@ -38,4 +38,11 @@ class WorkoutService {
         .then(resp => resp.json())
         .then(json => alert(json.message))
     }
+
+    // static addLegWorkout(journalId) {
+    //     console.log(journalId)
+    //     // const legsContainer = document.querySelector(`#journal-${journalId}`)
+
+    // }
+    
 }
